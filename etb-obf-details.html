@@ -5,86 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>PokéRev - Homepage</title>
+    <title>PokéRev - ETB OBF</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <style>
-        /* Estilo para ajustar las imágenes del carrusel */
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Estilo para el dropdown del carrito */
-        .dropdown-cart {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-cart-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: white;
-            min-width: 300px;
-            max-height: 300px;
-            overflow-y: auto;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-cart:hover .dropdown-cart-content {
-            display: block;
-        }
-
-        .cart-item {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .cart-item:last-child {
-            border-bottom: none;
-        }
-
-        .cart-item img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-        }
-
-        .cart-item-details {
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 10px;
-        }
-
-        .cart-total {
-            padding: 10px;
-            text-align: right;
-        }
-
-        .product-counter {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .product-counter button {
-            padding: 5px 10px;
-        }
-
-        .product-counter span {
-            min-width: 30px;
-            text-align: center;
-        }
-    </style>
 </head>
+<style>
+    /* Estilo para ajustar las imágenes del carrusel */
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Estilo para el dropdown del carrito */
+    .dropdown-cart {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-cart-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 300px;
+        max-height: 300px;
+        overflow-y: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-cart:hover .dropdown-cart-content {
+        display: block;
+    }
+
+    .cart-item {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item:last-child {
+        border-bottom: none;
+    }
+
+    .cart-item img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    .cart-item-details {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+
+    .cart-total {
+        padding: 10px;
+        text-align: right;
+    }
+
+    .product-counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .product-counter button {
+        padding: 5px 10px;
+    }
+
+    .product-counter span {
+        min-width: 30px;
+        text-align: center;
+    }
+</style>
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -118,51 +118,34 @@
             </div>
         </div>
     </nav>
-    <!-- Header with Carousel-->
-    <header>
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/carrusel/img1.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/carrusel/img2.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/carrusel/img3.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </header>
-    <!-- Section-->
+    <!-- Product section-->
     <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://factorycardstcg.com/cdn/shop/files/ObsidianFlamesETB.jpg?v=1685875956" alt="ETB 151" /></div>
+                <div class="col-md-6">
+                    <div class="small mb-1">SKU: ETB-OBF</div>
+                    <h1 class="display-5 fw-bolder">ETB Obsidian Flames</h1>
+                    <div class="fs-5 mb-5">
+                        <span>$40.00</span>
+                    </div>
+                    <p class="lead">The Obsidian Flames Elite Trainer Box features an exclusive collection of cards and accessories that every Pokémon trainer will want to have in their collection.</p>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addToCart('ETB Obsidian Flames', 40, 'https://factorycardstcg.com/cdn/shop/files/ObsidianFlamesETB.jpg?v=1685875956')">
+                            <i class="bi-cart-fill me-1"></i>
+                            Add to cart
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related items section-->
+    <section class="py-5 bg-light">
         <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="product-list">
+            <h2 class="fw-bolder mb-4">Related products</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">
                     <div class="card h-100">
                         <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Top Sale</div>
@@ -194,55 +177,6 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://factorycardstcg.com/cdn/shop/files/ObsidianFlamesETB.jpg?v=1685875956" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">ETB Obsidian Flames</h5>
-                                <!-- Product price-->
-                                $40.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('ETB Obsidian Flames', 40, 'https://factorycardstcg.com/cdn/shop/files/ObsidianFlamesETB.jpg?v=1685875956')">Add to cart</a>
-                                <div class="product-counter" style="display: none;">
-                                    <button class="btn btn-outline-dark" onclick="decreaseItem('ETB Obsidian Flames', this)">-</button>
-                                    <span class="item-count">1</span>
-                                    <button class="btn btn-outline-dark" onclick="increaseItem('ETB Obsidian Flames', this)">+</button>
-                                </div>
-                                <a class="btn btn-outline-dark mt-auto" href="etb-obf-details.html">View more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <div class="badge bg-danger text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">Stock out</div>
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://flashstore.es/wp-content/uploads/2022/11/etbSilver.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">ETB Silver Tempest</h5>
-                                <!-- Product price-->
-                                $40.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-outline-danger mt-auto" href="#" onclick="alert('This item is out of stock and cannot be added to the cart.')">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
                         <img class="card-img-top" src="https://flashstore.es/wp-content/uploads/2023/06/ultraPrem151-1.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
@@ -262,7 +196,7 @@
                                     <span class="item-count">1</span>
                                     <button class="btn btn-outline-dark" onclick="increaseItem('UPC 151', this)">+</button>
                                 </div>
-                                <a class="btn btn-outline-dark mt-auto" href="upc-151-details.html">View more</a>
+                                <a class="btn btn-outline-dark mt-auto" href="details-etb151.html">View more</a>
                             </div>
                         </div>
                     </div>
@@ -290,7 +224,7 @@
                                     <span class="item-count">1</span>
                                     <button class="btn btn-outline-dark" onclick="increaseItem('Booster Box Temporal Forces', this)">+</button>
                                 </div>
-                                <a class="btn btn-outline-dark mt-auto" href="boosterbox-tef-details.html">View more</a>
+                                <a class="btn btn-outline-dark mt-auto" href="details-etb151.html">View more</a>
                             </div>
                         </div>
                     </div>

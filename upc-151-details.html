@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>PokéRev - UPC 151</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<style>
+    /* Estilo para ajustar las imágenes del carrusel */
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Estilo para el dropdown del carrito */
+    .dropdown-cart {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-cart-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 300px;
+        max-height: 300px;
+        overflow-y: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-cart:hover .dropdown-cart-content {
+        display: block;
+    }
+
+    .cart-item {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item:last-child {
+        border-bottom: none;
+    }
+
+    .cart-item img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    .cart-item-details {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+
+    .cart-total {
+        padding: 10px;
+        text-align: right;
+    }
+
+    .product-counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .product-counter button {
+        padding: 5px 10px;
+    }
+
+    .product-counter span {
+        min-width: 30px;
+        text-align: center;
+    }
+</style>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Pokerev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!" onclick="filterProducts('popular')">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#!" onclick="filterProducts('new')">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="dropdown-cart">
+                    <button class="btn btn-outline-dark" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill" id="cart-count">0</span>
+                        
+                    </button>
+                    <div class="dropdown-cart-content" id="cart-items">
+                        <!-- Items will be dynamically added here -->
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Product section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://flashstore.es/wp-content/uploads/2023/06/ultraPrem151-1.jpg" alt="ETB 151" /></div>
+                <div class="col-md-6">
+                    <div class="small mb-1">SKU: UPC-151</div>
+                    <h1 class="display-5 fw-bolder">UPC 151</h1>
+                    <div class="fs-5 mb-5">
+                        <span>$120.00</span>
+                    </div>
+                    <p class="lead">The 151 Ultra Premium Collection features an exclusive collection of cards and accessories that every Pokémon trainer will want to have in their collection.</p>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addToCart('UPC 151', 120, 'https://flashstore.es/wp-content/uploads/2023/06/ultraPrem151-1.jpg')">
+                            <i class="bi-cart-fill me-1"></i>
+                            Add to cart
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related items section-->
+    <section class="py-5 bg-light">
+        <div class="container px-4 px-lg-5 mt-5">
+            <h2 class="fw-bolder mb-4">Related products</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://factorycardstcg.com/cdn/shop/files/ObsidianFlamesETB.jpg?v=1685875956" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">ETB Obsidian Flames</h5>
+                                <!-- Product price-->
+                                $40.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('ETB Obsidian Flames', 40, 'https://factorycardstcg.com/cdn/shop/files/ObsidianFlamesETB.jpg?v=1685875956')">Add to cart</a>
+                                <div class="product-counter" style="display: none;">
+                                    <button class="btn btn-outline-dark" onclick="decreaseItem('ETB Obsidian Flames', this)">-</button>
+                                    <span class="item-count">1</span>
+                                    <button class="btn btn-outline-dark" onclick="increaseItem('ETB Obsidian Flames', this)">+</button>
+                                </div>
+                                <a class="btn btn-outline-dark mt-auto" href="details-etb151.html">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://flashstore.es/wp-content/uploads/2024/07/blister.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Back to School 2024 blister</h5>
+                                <!-- Product price-->
+                                $10.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('Back to School 2024 blister', 10, 'https://flashstore.es/wp-content/uploads/2024/07/blister.jpg')">Add to cart</a>
+                                <div class="product-counter" style="display: none;">
+                                    <button class="btn btn-outline-dark" onclick="decreaseItem('Back to School 2024 blister', this)">-</button>
+                                    <span class="item-count">1</span>
+                                    <button class="btn btn-outline-dark" onclick="increaseItem('Back to School 2024 blister', this)">+</button>
+                                </div>
+                                <a class="btn btn-outline-dark mt-auto" href="details-etb151.html">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <div class="badge bg-warning text-dark position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://flashstore.es/wp-content/uploads/2024/01/caja36sv5.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Booster Box Temporal Forces</h5>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through" style="margin-right: 3%;">$110.00</span>$90.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('Booster Box Temporal Forces', 90, 'https://flashstore.es/wp-content/uploads/2024/01/caja36sv5.jpg')">Add to cart</a>
+                                <div class="product-counter" style="display: none;">
+                                    <button class="btn btn-outline-dark" onclick="decreaseItem('Booster Box Temporal Forces', this)">-</button>
+                                    <span class="item-count">1</span>
+                                    <button class="btn btn-outline-dark" onclick="increaseItem('Booster Box Temporal Forces', this)">+</button>
+                                </div>
+                                <a class="btn btn-outline-dark mt-auto" href="details-etb151.html">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Top Sale</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://flashstore.es/wp-content/uploads/2023/06/etb151.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">ETB 151</h5>
+                                <!-- Product price-->
+                                $40.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('ETB 151', 40, 'https://flashstore.es/wp-content/uploads/2023/06/etb151.jpg')">Add to cart</a>
+                                <div class="product-counter" style="display: none;">
+                                    <button class="btn btn-outline-dark" onclick="decreaseItem('ETB 151', this)">-</button>
+                                    <span class="item-count">1</span>
+                                    <button class="btn btn-outline-dark" onclick="increaseItem('ETB 151', this)">+</button>
+                                </div>
+                                <a class="btn btn-outline-dark mt-auto" href="etb-151-details.html">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+            <p class="m-0 text-center text-white">Instagram</p>
+            <p class="m-0 text-center text-white">Shop</p>
+            <p class="m-0 text-center text-white">YouTube</p>
+            <p class="m-0 text-center text-white">Ebay Store</p>
+            <p class="m-0 text-center text-white">About</p>
+            <p class="m-0 text-center text-white">Policies</p>
+            <p class="m-0 text-center text-white">Poke.Rev@yahoo.com</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

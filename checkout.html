@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>PokéRev - Checkout</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #eee;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        .text-navy {
+            color: #000000;
+        }
+        .cart-product-imitation {
+            text-align: center;
+            height: 80px;
+            width: 80px;
+            background-color: #f8f8f9;
+        }
+        .product-imitation.xl {
+            padding: 120px 0;
+        }
+        .product-desc {
+            padding: 20px;
+            position: relative;
+        }
+        .ecommerce .tag-list {
+            padding: 0;
+        }
+        .ecommerce .fa-star {
+            color: #d1dade;
+        }
+        .ecommerce .fa-star.active {
+            color: #f8ac59;
+        }
+        .ecommerce .note-editor {
+            border: 1px solid #e7eaec;
+        }
+        table.shoping-cart-table {
+            margin-bottom: 0;
+        }
+        table.shoping-cart-table tr td {
+            border: none;
+            text-align: right;
+        }
+        table.shoping-cart-table tr td.desc,
+        table.shoping-cart-table tr td:first-child {
+            text-align: left;
+        }
+        table.shoping-cart-table tr td:last-child {
+            width: 80px;
+        }
+        .ibox {
+            clear: both;
+            margin-bottom: 25px;
+            margin-top: 0;
+            padding: 0;
+        }
+        .ibox.collapsed .ibox-content {
+            display: none;
+        }
+        .ibox:after,
+        .ibox:before {
+            display: table;
+        }
+        .ibox-title {
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            background-color: #ffffff;
+            border-color: #e7eaec;
+            border-image: none;
+            border-style: solid solid none;
+            border-width: 3px 0 0;
+            color: inherit;
+            margin-bottom: 0;
+            padding: 14px 15px 7px;
+            min-height: 48px;
+        }
+        .ibox-content {
+            background-color: #ffffff;
+            color: inherit;
+            padding: 15px 20px 20px 20px;
+            border-color: #e7eaec;
+            border-image: none;
+            border-style: solid solid none;
+            border-width: 1px 0;
+        }
+        .ibox-footer {
+            color: inherit;
+            border-top: 1px solid #e7eaec;
+            font-size: 90%;
+            background: #ffffff;
+            padding: 10px 15px;
+        }
+        /* Estilo para el dropdown del carrito */
+        .dropdown-cart {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-cart-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 300px;
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-cart:hover .dropdown-cart-content {
+            display: block;
+        }
+        .cart-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+        .cart-item-details {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        .cart-total {
+            padding: 10px;
+            text-align: right;
+        }
+        .product-counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .product-counter button {
+            padding: 5px 10px;
+        }
+        .product-counter span {
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgb(218, 218, 218); /* Cambia esto al color que prefieras */
+    width: 30px;
+    height: 30px;
+}
+
+.carousel-control-prev-icon {
+    background-image: none; /* Elimina el icono predeterminado */
+}
+
+.carousel-control-next-icon {
+    background-image: none; /* Elimina el icono predeterminado */
+}
+
+.carousel-control-prev-icon::before {
+    content: '<'; /* Añade tu propio icono */
+    font-size: 20px;
+    color: rgb(0, 0, 0); /* Cambia esto al color que prefieras */
+}
+
+.carousel-control-next-icon::before {
+    content: '>'; /* Añade tu propio icono */
+    font-size: 20px;
+    color: rgb(0, 0, 0);; /* Cambia esto al color que prefieras */
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Pokerev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!" onclick="filterProducts('popular')">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#!" onclick="filterProducts('new')">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="dropdown-cart">
+                    <button class="btn btn-outline-dark" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill" id="cart-count">0</span>
+                    </button>
+                    <div class="dropdown-cart-content" id="cart-items">
+                        <!-- Items will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Checkout Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <span class="pull-right">(<strong id="item-count">0</strong>) items</span>
+                                <h5>Items in your cart</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+                                    <table class="table shoping-cart-table">
+                                        <tbody id="cart-table-body">
+                                            <!-- Cart items will be dynamically added here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <button class="btn btn-outline-dark pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
+                                <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>Cart Summary</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <span>Total</span>
+                                <h2 class="font-bold" id="cart-total">$0.00</h2>
+                                <hr>
+                                <span class="text-muted small">
+                                    *For United States, France and Germany applicable sales tax will be applied
+                                </span>
+                                <div class="m-t-sm">
+                                    <div class="btn-group">
+                                        <a href="#" class="btn btn-dark btn-sm"><i class="fa fa-shopping-cart"></i> Checkout</a>
+                                        <a href="#" class="btn btn-outline-dark btn-sm"> Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>Support</h5>
+                            </div>
+                            <div class="ibox-content text-center">
+                                <h3><i class="fa fa-phone"></i> +43 100 783 001</h3>
+                                <span class="small">Please contact with us if you have any questions. We are available 24h.</span>
+                            </div>
+                        </div>
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <p class="font-bold">Other products you may be interested in</p>
+                                <hr>
+                                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <!-- Product 1 -->
+                                                    <img class="card-img-top" src="https://flashstore.es/wp-content/uploads/2024/07/blister.jpg" alt="Back to School 2024 blister" />
+                                                    <div class="card-body p-4">
+                                                        <div class="text-center">
+                                                            <h3 class="fw-bolder">Back to School 2024 blister</h3>
+                                                            <!-- Product price-->
+                                                         $10.00
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <!-- Product 2 -->
+                                                    <img class="card-img-top" src="https://flashstore.es/wp-content/uploads/2023/06/ultraPrem151-1.jpg" alt="UPC 151" />
+                                                    <div class="card-body p-4">
+                                                        <div class="text-center">
+                                                            <h3 class="fw-bolder">UPC 151</h3>
+                                                            <!-- Product price-->
+                                                         $120.00
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <!-- Product image-->
+                                                    <img class="card-img-top" src="https://factorycardstcg.com/cdn/shop/files/ObsidianFlamesETB.jpg?v=1685875956" alt="..." />
+                                                    <!-- Product details-->
+                                                    <div class="card-body p-4">
+                                                        <div class="text-center">
+                                                            <!-- Product name-->
+                                                            <h5 class="fw-bolder">ETB Obsidian Flames</h5>
+                                                            <!-- Product price-->
+                                                         $40.00
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+            <p class="m-0 text-center text-white">Instagram</p>
+            <p class="m-0 text-center text-white">Shop</p>
+            <p class="m-0 text-center text-white">YouTube</p>
+            <p class="m-0 text-center text-white">Ebay Store</p>
+            <p class="m-0 text-center text-white">About</p>
+            <p class="m-0 text-center text-white">Policies</p>
+            <p class="m-0 text-center text-white">Poke.Rev@yahoo.com</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script>
+        // JS functions here
+        function updateCheckoutPage() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let cartTableBody = document.getElementById('cart-table-body');
+            let cartTotal = document.getElementById('cart-total');
+            let itemCount = document.getElementById('item-count');
+            cartTableBody.innerHTML = '';
+
+            let totalAmount = 0;
+
+            cartItems.forEach(item => {
+                totalAmount += item.price * item.quantity;
+
+                let row = document.createElement('tr');
+                row.innerHTML = `
+                    <td width="90">
+                        <div class="cart-product-imitation">
+                            <img src="${item.imageUrl}" alt="${item.name}" style="width: 80px; height: 80px;">
+                        </div>
+                    </td>
+                    <td class="desc">
+                        <h3>
+                            <a href="#" class="text-navy">${item.name}</a>
+                        </h3>
+                        <p class="small">
+                            Quantity: ${item.quantity}
+                        </p>
+                        <div class="m-t-sm">
+                            <a href="#" class="text-muted" onclick="removeItem('${item.name}')"><i class="fa fa-trash"></i> Remove item</a>
+                        </div>
+                    </td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td width="65">
+                        <input type="number" class="form-control" value="${item.quantity}" min="1" onchange="updateItemQuantity('${item.name}', this.value)">
+                    </td>
+                    <td>
+                        <h4>
+                            $${(item.price * item.quantity).toFixed(2)}
+                        </h4>
+                    </td>
+                `;
+                cartTableBody.appendChild(row);
+            });
+
+            cartTotal.textContent = `$${totalAmount.toFixed(2)}`;
+            itemCount.textContent = cartItems.length;
+        }
+
+        function removeItem(productName) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems = cartItems.filter(item => item.name !== productName);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            updateCheckoutPage();
+        }
+
+        function updateItemQuantity(productName, quantity) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let item = cartItems.find(item => item.name === productName);
+            if (item) {
+                item.quantity = parseInt(quantity);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCheckoutPage();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCheckoutPage();
+        });
+    </script>
+</body>
+</html>
